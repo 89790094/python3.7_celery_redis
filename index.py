@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from celery_app import task
+from celery_app import interval
 
-task.multiply.delay(2,4)
+interval.multiply.delay(2,4)

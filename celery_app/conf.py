@@ -11,15 +11,24 @@ CELERY_RESULT_BACKEND = 'redis://:sa@192.168.199.99:6379/1'
 
 CELERY_TIMEZONE = 'Asia/Shanghai'
 
+# celery worker执行清单
 CELERY_IMPORTS = (
-	'celery_app.task'
+	'celery_app.interval',
+	'celery_app.cron',
+
 )
 
+# celery beat定时任务配置基项
 CELERYBEAT_SCHEDULE = {
 	'task1':{
-		'task':'celery_app.task.multiply',
-		'schedule':timedelta(seconds=2),
+		'task':'celery_app.interval.multiply',
+		'schedule':timedelta(seconds=50),
 		'args':(5,6)
+	},
+	'task2':{
+		'task':'celery_app.cron.divide',
+		'schedule':crontab(hour=17,minute=39),
+		'args':(8,2)
 	}
 }
 
