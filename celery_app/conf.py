@@ -4,7 +4,7 @@
 
 BROKER_URL = 'redis://:sa@192.168.199.99:6379/0'
 
-CERLERY_RESULT_BACKEND = 'redis://:sa@192.168.199.99:6379/1'
+CELERY_RESULT_BACKEND = 'redis://:sa@192.168.199.99:6379/1'
 
 CELERY_TIMEZONE = 'Asia/Shanghai'
 
