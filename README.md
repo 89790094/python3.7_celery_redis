@@ -1,4 +1,4 @@
-# python3.7_celery_redis
+# python3.7_celery[redis]
 ## install
 ```
 pip install celery[redis]
